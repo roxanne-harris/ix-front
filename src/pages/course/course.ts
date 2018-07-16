@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Course } from '../../models/course';
+import { AddReviewPage } from '../add-review/add-review';
+import { ReviewsPage } from '../reviews/reviews';
 
 /**
  * Generated class for the CoursePage page.
@@ -27,6 +29,18 @@ export class CoursePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoursePage');
+  }
+
+  navigateToAddReview() {
+    this.navCtrl.push(AddReviewPage, {
+      reviewParameter: this.course
+    });
+  }
+
+  navigateToReviews() {
+    this.navCtrl.push(ReviewsPage, {
+      reviewParameter: this.course
+    });
   }
 
 }

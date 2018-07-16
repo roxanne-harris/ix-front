@@ -6,14 +6,14 @@
 -->
 <ion-header>
 
-  <ion-navbar text-center>
-    <ion-buttons left>
+  <ion-navbar text-center color="black">
+    <!-- <ion-buttons left>
       <button ion-button icon-only menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
 
-    <ion-title>CourseList</ion-title>
+    <!-- <ion-title>CourseList</ion-title> -->
 
     <ion-buttons right>
       <button ion-button icon-only (click)="navigateToAddCourse()">
@@ -26,7 +26,7 @@
 
 
 <ion-content padding>
-
+  <!-- 
   <ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
@@ -47,12 +47,14 @@
     </ion-content>
   </ion-menu>
 
-  <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+  <ion-nav id="nav" #content [root]="rootPage"></ion-nav> -->
+  <div class="content">
+    <ion-list>
+      <button class="content" ion-item *ngFor="let course of listOfCourses" (click)="navigateToCourse(course)">
+        {{ course.subject }} {{ course.number }}: {{ course.title }}
+      </button>
+    </ion-list>
+  </div>
 
-  <ion-list>
-    <button ion-item *ngFor="let course of listOfCourses" (click)="navigateToCourse(course)">
-      {{ course?.courseCode }}: {{ course?.title }}
-    </button>
-  </ion-list>
 
 </ion-content>

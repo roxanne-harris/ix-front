@@ -17,16 +17,30 @@
 
     <ion-list>
         <ion-item>
-            <ion-label stacked>Course Code</ion-label>
-            <ion-input [(ngModel)]="courseCode" type="text" value="" placeholder="CPSC 223"></ion-input>
+            <ion-label stacked>Subject</ion-label>
+            <ion-input [(ngModel)]="subject" type="text" value="" placeholder=""></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Number</ion-label>
+            <ion-input [(ngModel)]="number" type="text" value="" placeholder=""></ion-input>
         </ion-item>
         <ion-item>
             <ion-label stacked>Title</ion-label>
-            <ion-input [(ngModel)]="title" type="text" value="" placeholder="Data Structures and Programming Techniques"></ion-input>
+            <ion-input [(ngModel)]="title" type="text" value="" placeholder=""></ion-input>
         </ion-item>
         <ion-item>
             <ion-label stacked>Description</ion-label>
             <ion-input [(ngModel)]="description" type="text" value=""></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Institution</ion-label>
+            <ion-input [(ngModel)]="universityName" type="text" value=""></ion-input>
+        </ion-item>
+
+        <!-- How to add several instructors!!! -->
+        <ion-item>
+            <ion-label stacked>Instructor</ion-label>
+            <ion-input [(ngModel)]="universityName" type="text" value=""></ion-input>
         </ion-item>
         <!-- <ion-item>
             <ion-label stacked>Instructor</ion-label>
@@ -48,9 +62,10 @@
             <ion-label stacked>KeyWords</ion-label>
             <ion-input [(ngModel)]="keywords" type="text" value=""></ion-input>
         </ion-item>
+    -->
         <button ion-item (click)="addCourseToList()">
             Add Course
-        </button> -->
+        </button>
     </ion-list>
 
 

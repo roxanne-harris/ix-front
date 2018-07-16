@@ -12,7 +12,14 @@ import { LoginPage } from '../login/login';
 
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController) {}
+  firstName: string;
+  lastName: string;
+  email: string;
+
+  constructor(public navCtrl: NavController) 
+  {
+
+  }
 
   navigateToHomeSetRoot() {
     console.log("Home...");

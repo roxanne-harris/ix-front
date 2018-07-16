@@ -1,26 +1,28 @@
 export class Course {
 
-    courseId: number;
+    course_id: number;
     subject: string;
     number: number;
     title: string;
     description: string;
+    university_id: number;
 
 
     constructor(
-        courseId: number,
+        course_id: number,
         subject: string,
         number: number,
         title: string,
-        description: string
+        description: string,
+        university_id: number
     ) {
 
-        this.courseId = courseId;
+        this.course_id = course_id;
         this.subject = subject;
         this.number = number;
         this.title = title;
         this.description = description;
-
+        this.university_id = university_id;
 
     }
 

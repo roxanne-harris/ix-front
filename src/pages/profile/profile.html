@@ -8,55 +8,53 @@
 
 <ion-content padding>
 
-  <ion-list no-lines>
+  <!-- <ion-list no-lines>
     <ion-item>
-        <img id="profile-photo" src="../../assets/imgs/logo.png" alt="Profile Photo">
+      <img id="profile-photo" src="../../assets/imgs/logo.png" alt="Profile Photo">
     </ion-item>
     <ion-item>
-      <p text-center><a href="">Change Profile Photo</a></p>
+      <p text-center>
+        <a href="">Change Profile Photo</a>
+      </p>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
+
+  <div>
+
+    <ion-list>
+      <ion-item class="content">
+        <ion-label fixed>First Name</ion-label>
+        <ion-input [(ngModel)]="firstName" type="text" placeholder={{firstName}}></ion-input>
+      </ion-item>
+      <ion-item class="content">
+        <ion-label fixed>Last Name</ion-label>
+        <ion-input [(ngModel)]="lastName" type="text" placeholder={{lastName}}></ion-input>
+      </ion-item>
+      <ion-item class="content">
+        <ion-label fixed>Email</ion-label>
+        <ion-input [(ngModel)]="email" type="text" placeholder={{email}}></ion-input>
+      </ion-item>
+    </ion-list>
 
 
-  <ion-list>
-    <ion-item>
-      <ion-label fixed>Name</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>Username</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>Bio</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-  </ion-list>
+    <ion-row>
+        <button ion-button color="secondary" block>Update Password</button>
+        <button ion-button color="secondary" block (click)="navigateToHomeSetRoot()">Log Out</button>
+    </ion-row>
 
-  <ion-list>
-    <ion-list-header>
-      PRIVATE INFORMATION
-    </ion-list-header>
-    <ion-item>
-      <ion-label fixed>Email</ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button block color="secondary" (click)="navigateBack()">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button icon-only block color="danger">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
 
-    <ion-item>
-      <ion-label fixed>Phone</ion-label>
-      <ion-input type="tel"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>Gender</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-  </ion-list>
-
-  <div padding>
-    <button ion-button block (click)="navigateBack()">Done</button>
-    <button ion-button block (click)="navigateToLogin()">Log Out</button>
   </div>
 
   <!--
@@ -68,7 +66,7 @@
   </ion-card>
   -->
 
-  
+
   <!--
   <ion-grid>
     <ion-row>

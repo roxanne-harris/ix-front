@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar text-center>
-    <ion-title>Course</ion-title>
+  <ion-navbar>
+    <ion-title></ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,9 +15,9 @@
 
 <ion-content padding>
 
-  <ion-card>
+  <!-- <ion-card>
     <ion-card-header>
-      {{ course?.courseCode }}
+      {{ course?.subject }} {{ course?.number}}
     </ion-card-header>
     <ion-card-content>
       <div>
@@ -26,18 +26,23 @@
       <div>
         {{ course?.description }}
       </div>
-      <div>
-        {{ course?.instructor }}
-      </div>
-    </ion-card-content>
-  </ion-card>
 
-  <button ion-button>
+      <div>
+          {{ course?.university_id }}
+        </div>
+    </ion-card-content>
+  </ion-card> -->
+
+  <!-- <button ion-button>
     Save
+  </button> -->
+
+  <button ion-button (click)="navigateToAddReview()">
+    Add Review
   </button>
 
-  <button ion-button>
-    Review
+  <button ion-button (click)="navigateToReviews()">
+    View Reviews
   </button>
 
 

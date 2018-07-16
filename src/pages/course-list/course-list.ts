@@ -17,9 +17,13 @@ import { MyCoursesPage } from '../my-courses/my-courses';
   selector: 'page-course-list',
   templateUrl: 'course-list.html',
 })
+
+/** 
+ * Figure out how to auto-reload/refresh this page so the data updates!
+*/
 export class CourseListPage {
 
-  public listOfCourses: Array<Course>;
+  public listOfCourses: any;
 
   constructor(
     public navCtrl: NavController, 
@@ -27,7 +31,21 @@ export class CourseListPage {
     public courseService: CourseService
   ) {
     this.listOfCourses = [];
-    this.listOfCourses = courseService.getListOfCourses();
+
+    courseService.getListOfCourses((err, results) => {
+      if (err) {
+        // error
+      }
+
+      this.listOfCourses = results;
+    });
+
+    // if (courseService.getListOfCourses() != null) {
+    //     this.listOfCourses = courseService.getListOfCourses();
+    // }
+    
+    //console.log(courseService.getListOfCourses());
+    //console.log(this.listOfCourses);
   }
 
   // saveCourse(course: Course) {
@@ -46,6 +64,8 @@ export class CourseListPage {
 
   navigateToAddCourse() {
     this.navCtrl.push(AddCoursePage);
+    //console.log(this.listOfCourses);
+    //console.log(this.http.get("http://localhost:3000/courses"));
   }
 
   navigateToProfile() {
@@ -54,6 +74,23 @@ export class CourseListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourseListPage');
+    this.courseService.getListOfCourses((err, results) => {
+      if (err) {
+        // error
+      }
+
+      this.listOfCourses = results;
+    });
+  }
+
+  ionViewDidEnter() {
+    this.courseService.getListOfCourses((err, results) => {
+      if (err) {
+        // error
+      }
+
+      this.listOfCourses = results;
+    });
   }
 
 }

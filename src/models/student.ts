@@ -8,6 +8,7 @@ export class Student {
     email: string;
     password: string;
     paid: boolean;
+    university_id: string;
 
 
     constructor(
@@ -16,7 +17,8 @@ export class Student {
         lastName: string,
         email: string,
         password: string,
-        paid: boolean
+        paid: boolean,
+        university_id: string
     ) {
 
         this.studentId = studentId;
@@ -25,6 +27,7 @@ export class Student {
         this.email = email;
         this.password = password;
         this.paid = paid;
+        this.university_id = university_id;
 
 
     }

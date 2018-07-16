@@ -59,6 +59,10 @@ export class RegistrationPage {
           localStorage.setItem("TOKEN", token);
 
           let t = localStorage.getItem("TOKEN");
+
+          if (t != null) {
+              this.navigateToLogin();
+          }
         },
 
         err => {
